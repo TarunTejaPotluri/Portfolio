@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarun Teja - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007BFF, #00BFFF);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.8em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .scrolling-text {
+            font-size: 1.2em;
+            margin: 15px 0;
+            animation: scroll-text 10s linear infinite;
+        }
+
+        .nav-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9;
+        }
+
+        .nav-overlay a {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin: 15px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-overlay a:hover {
+            color: #00BFFF;
+        }
+
+        main {
+            padding: 20px;
+            margin: auto;
+            max-width: 1200px;
+        }
+
+        section {
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card h3 {
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-link {
+            display: inline-block;
+            background: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .project-link:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @keyframes scroll-text {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100%); }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .scrolling-text {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .scrolling-text {
+                font-size: 0.9em;
+            }
+        }
+    </style>
+    <script>
+        function toggleNav() {
+            const navOverlay = document.getElementById("navOverlay");
+            navOverlay.style.display = navOverlay.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Tarun Teja Potluri</h1>
+        <p>Student at Velagapudi Rama Krishna Siddhartha Engineering College | CSE(AI&DS)</p>
+        <div class="scrolling-text">
+            Welcome to my Portfolio! Explore my projects and skills.
+        </div>
+    </header>
+
+    <button class="nav-button" onclick="toggleNav()">☰</button>
+
+    <div id="navOverlay" class="nav-overlay">
+        <a href="#about" onclick="toggleNav()">About Me</a>
+        <a href="#education" onclick="toggleNav()">Education</a>
+        <a href="#soft-skills" onclick="toggleNav()">Soft Skills</a>
+        <a href="#technical-skills" onclick="toggleNav()">Technical Skills</a>
+        <a href="#languages" onclick="toggleNav()">Languages Known</a>
+        <a href="#certificates" onclick="toggleNav()">Certificates</a>
+        <a href="#internships" onclick="toggleNav()">Internships</a>
+        <a href="#participations" onclick="toggleNav()">Participations</a>
+        <a href="#projects" onclick="toggleNav()">Projects</a>
+        <a href="#resume" onclick="toggleNav()">Resume</a>
+        <a href="#contact" onclick="toggleNav()">Contact Me</a>
+    </div>
+
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a motivated and detail-oriented recent graduate in Computer Science with a specialization in Artificial Intelligence and Data Science. I aim to leverage my academic knowledge and practical skills in a dynamic professional environment. My hands-on projects in data analysis, web development, and generative AI, alongside internships, have honed my problem-solving abilities and technical proficiency. I am passionate about utilizing innovative technologies to solve real-world challenges and contribute to team success.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Degree</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Institution</th>
+                        <th style="border: 1px solid #ddd; padding: 8px;">Year of Passing</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #ddd; padding: 8px;">B.Tech in Computer Science (AI & DS)</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">Velagapudi Rama Krishna Siddhartha Engineering College</td>
+                        <td style="border: 1px solid #ddd; padding: 8px;">2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="soft-skills">
+            <h2>Soft Skills</h2>
+            <ul>
+                <li>Effective Communication</li>
+                <li>Team Collaboration</li>
+                <li>Problem Solving</li>
+                <li>Adaptability</li>
+                <li>Time Management</li>
+            </ul>
+        </section>
+
+        <section id="technical-skills">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li>Programming Languages: Python, Java, C++</li>
+                <li>Web Development: HTML, CSS, JavaScript, Bootstrap</li>
+                <li>Data Analysis: Pandas, NumPy, Matplotlib</li>
+                <li>Machine Learning: Scikit-learn, TensorFlow</li>
+                <li>Tools: Git, Jupyter Notebook, Visual Studio Code</li>
+            </ul>
+        </section>
+
+        <section id="languages">
+            <h2>Languages Known</h2>
+            <ul>
+                <li>English</li>
+                <li>Telugu</li>
+                <li>Hindi</li>
+            </ul>
+        </section>
+
+        <section id="certificates">
+            <h2>Certificates</h2>
+            <ul>
+                <li>Salesforce Developer Virtual Internship</li>
+                <li>Generative AI Internship</li>
+                <li>Various online courses in Data Science and Machine Learning</li>
+            </ul>
+        </section>
+
+        <section id="internships">
+            <h2>Internships</h2>
+            <ul>
+                <li>Salesforce Developer Internship (Nov 2023 - Jan 2024)</li>
+                <li>Generative AI Internship (Completed)</li>
+            </ul>
+        </section>
+
+        <section id="participations">
+            <h2>Participations</h2>
+            <ul>
+                <li>Hackathons and Coding Competitions</li>
+                <li>Workshops on AI and Data Science</li>
+            </ul>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>Activity Classification using Gait Skeletal Angles</h3>
+                    <p>Developed a model to classify activities such as walking, running, and clapping based on skeletal angles using MediaPipe and OpenCV.</p>
+                    <a class="project-link" href="link_to_project_1">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Summarizing and Analyzing Research Papers</h3>
+                    <p>Analyzed the impact of climate change on biodiversity, focusing on adaptive ecosystem-based conservation strategies.</p>
+                    <a class="project-link" href="link_to_project_2">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>Interactive Data Visualization Dashboard</h3>
+                    <p>Created a dashboard using Power BI to visualize data trends and insights in a user-friendly format.</p>
+                    <a class="project-link" href="link_to_project_3">View Project</a>
+                </div>
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+        <section id="resume">
+            <h2>Resume</h2>
+            <p>Download my resume <a href="link_to_resume.pdf" target="_blank">here</a>.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>If you would like to connect or have any inquiries, feel free to reach out via:</p>
+            <ul>
+                <li>Email: <a href="mailto:your_email@example.com">your_email@example.com</a></li>
+                <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn Profile</a></li>
+                <li>GitHub: <a href="https://github.com/yourusername" target="_blank">GitHub Profile</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Tarun Teja Potluri. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
